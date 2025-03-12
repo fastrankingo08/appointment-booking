@@ -176,12 +176,12 @@ public class AppointmentServiceImpl implements AppointmentService {
 
         // 2. Retrieve configuration for maximum calls per agent.
         String maxCallStr = configurationRepository.getValue("max_call_per_agent");
-        int maxCall = 5;
+        int maxCall = 10;
         if (maxCallStr != null) {
             try {
                 maxCall = Integer.parseInt(maxCallStr);
             } catch (NumberFormatException e) {
-                maxCall = 5;
+                maxCall = 10;
             }
         }
 
